@@ -1,0 +1,25 @@
+
+
+Personal Finance Manager
+
+Description
+Personal Finance Manager is a web application designed to help users manage their finances effectively. With features such as expense tracking, budgeting tools, and financial goal setting, it empowers users to take control of their financial health and achieve their financial goals.
+
+Features
+Expense Tracking: Easily track your expenses by categorizing transactions and monitoring your spending habits.
+Budgeting Tools: Set up budgets for different expense categories and receive notifications when you exceed your budget.
+Financial Goal Setting: Define short-term and long-term financial goals, track your progress, and receive personalized recommendations to achieve them.
+Secure Authentication: Secure user authentication and authorization system to protect user data and ensure privacy.
+Intuitive User Interface: User-friendly interface with interactive charts and graphs for better visualization of financial data.
+Technologies Used
+Frontend:
+React: JavaScript library for building user interfaces
+React Router: Declarative routing for React applications
+CSS: Styling the user interface
+Axios: Promise-based HTTP client for making API requests
+Backend:
+Node.js: JavaScript runtime environment
+Express.js: Web application framework for Node.js
+SQLite: Lightweight relational database management system
+Sequelize: Promise-based ORM for Node.js
+JWT (JSON Web Tokens): Secure method for transmitting information between parties
