@@ -1,26 +1,29 @@
-// server.js or server.mjs
+// Import required modules
 import express from 'express';
-import path from 'path';
+import bodyParser from 'body-parser';
+import testRoute from './path/testRoute.js';
+import cors from 'cors';
 
-
-
+// Create an Express application
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(express.static(path.join(new URL('frontend/build', import.meta.url).pathname)));
-// Serve static files from the 'frontend/build' directory
-app.use(express.static(path.join(__dirname, 'frontend/build')));
+// Middleware
+app.use(bodyParser.json());
+app.use(cors());
 
-// API route
-app.get('/api/message', (req, res) => {
-  res.json({ message: 'Hello from the backend!' });
+// Use the test route
+app.use('/test', testRoute);
+
+// Define route handler for the root route
+app.get('/test', (req, res) => {
+  res.send('Hello World!');
 });
 
-// Catch-all route to serve React's 'index.html'
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
-});
-
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+
