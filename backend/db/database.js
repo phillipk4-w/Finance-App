@@ -1,12 +1,19 @@
-import sqlite3 from 'sqlite3';
+import Database from "better-sqlite3";
+const db = new Database('users.db');
 
-// Open SQLite database connection
-export const db = new sqlite3.Database(':memory:', (err) => {
-    if (err) {
-        console.error('Error connecting to SQLite database:', err.message);
-    } else {
-        console.log('Connected to SQLite database');
-    }
-});
+const createTable = `
+    CREATE TABLE IF NOT EXISTS users(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL,
+        password TEXT NOT NULL,
+        email TEXT,
+        name TEXT
+    )`
+    ;
+
+db.exec(createTable);
+
+
+db.close();
 
 
